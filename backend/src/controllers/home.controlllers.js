@@ -18,7 +18,7 @@ const homepage = async (req, res) => {
     );
     const send = response.data;
     if (user) {
-      send.usernname = user.name;
+      send.username = user.name;
       send.email = user.email;
     }
 
@@ -58,7 +58,7 @@ const homepage1 = async (req, res) => {
     );
     const send = response.data;
     if (user) {
-      send.usernname = user.name;}
+      send.username = user.name;}
     // const aqiindex = send.data.list[0].main.aqi
     // send.data.list[0].main.aqi = sky[aqiindex];
     // console.log(send.data.list[0])
@@ -105,7 +105,7 @@ const fetchusinglatlon = async (req, res) => {
 
     const send = response.data;
     if (user) {
-      send.usernname = user.name;}
+      send.username = user.name;}
     // Sending the response to the client
     return res
       .status(200)

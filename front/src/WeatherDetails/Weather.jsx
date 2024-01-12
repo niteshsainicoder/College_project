@@ -20,18 +20,15 @@ import tn from "../assets/images/10d.png"
 import en from "../assets/images/11n.png"
 import thn from "../assets/images/13n.png"
 import fin from "../assets/images/50n.png"
-import { homepage1 } from '../../../backend/src/controllers/home.controlllers';
 function Weather() {
 
 
-    const { loggedin, setloggedin } = useUCP();
+    const { loggedin, setloggedin,setusername} = useUCP();
     const [weather, setweather] = useState("");
     const [location, setLocation] = useState("");
     const [pollution, setPollution] = useState();
     const [lat, setlat] = useState("");
     const [lon, setlon] = useState("");
-    const [userLocation, setUserLocation] = useState(null);
-    const [username, setusername] = useState(true);
     const [date, setdate] = useState();
     const [time, settime] = useState(true);
     const sky = ["", "Good", "Fair", "Moderate", "Poor", "Very Poor"];
@@ -135,7 +132,6 @@ function Weather() {
             });
             console.log(response.data);
             setweather(response.data);
-            setusername(response.data.data.username)
             console.log(`response from fetchweatherdata `, weather)
         }
         catch (error) {
@@ -211,6 +207,7 @@ function Weather() {
         }
         if (weather && weather.loggedin) {
             setloggedin(weather.loggedin)
+            setusername(weather.data.username)
             console.log(weather.loggedin)
         }
         console.log(weather.loggedin)

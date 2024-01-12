@@ -9,11 +9,11 @@ function Layout() {
 
   const [loggedin, setloggedin] = useState(false);
   const [res, setres] = useState({})
-
+const [username,setusername]=useState('');
   
 
   return (
-    <ContextProvider value={{ loggedin,setloggedin , res,setres  }}>
+    <ContextProvider value={{ loggedin,setloggedin , res,setres,username,setusername  }}>
       <div className='w-screen h-screen'>
         <Header />
         <Outlet />
