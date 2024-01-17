@@ -23,7 +23,7 @@ import fin from "../assets/images/50n.png"
 function Weather() {
 
 
-    const { loggedin, setloggedin,setusername} = useUCP();
+    const { loggedin, setloggedin, setusername } = useUCP();
     const [weather, setweather] = useState("");
     const [location, setLocation] = useState("");
     const [pollution, setPollution] = useState();
@@ -32,7 +32,6 @@ function Weather() {
     const [date, setdate] = useState();
     const [time, settime] = useState(true);
     const sky = ["", "Good", "Fair", "Moderate", "Poor", "Very Poor"];
-
     const imageMap = {
         '01d': one,
         '02d': two,
@@ -52,7 +51,7 @@ function Weather() {
         '11n': en,
         '13n': thn,
         '50n': fin,
-    
+
     };
     const [icon, seticon] = useState();
 
@@ -90,7 +89,7 @@ function Weather() {
             const details = { params: { lat, lon } };
             const option = `http://localhost:3000/api-1/login/homepage/usinggeolocation`
 
-            const response = await axios.post(option, details,{withCredentials:true});
+            const response = await axios.post(option, details, { withCredentials: true });
             setweather(response.data)
             console.log(`response from fetchusinglatlon `, weather);
 
@@ -139,17 +138,6 @@ function Weather() {
         }
 
     };
-
-
-    //  useEffect(() => {
-
-
-    //      fetchusinglatlon({ lat, lon })
-
-    //  },
-    //      [userLocation]
-
-    //  )
 
 
 
@@ -211,10 +199,10 @@ function Weather() {
             console.log(weather.loggedin)
         }
         console.log(weather.loggedin)
-        console.log(weather,"no bro")
+        console.log(weather, "no bro")
 
-        // console.log(weather.data.
-        ;
+            // console.log(weather.data.
+            ;
 
 
     }, [weather])
